@@ -18,16 +18,24 @@ app.get('/', (req, res) => {
     return res.send('homepage')
 })
 
-app.get('/new', (req, res) => {
-    return res.send('newpage')
+app.get('/users/login', (req, res) => {
+    res.render('login')
 })
 
-app.get('/edit', (req, res) => {
-    return res.send('editpage')
+app.post('/users/login', (req, res) => {
+    res.send('login')
 })
 
-app.get('/delete', (req, res) => {
-    return res.send('deletepage')
+app.get('/users/register', (req, res) => {
+    res.render('register')
+})
+
+app.post('/users/register', (req, res) => {
+    res.send('register')
+})
+
+app.get('/users/logout', (req, res) => {
+    res.send('logout')
 })
 
 app.listen(3000, () => {
