@@ -6,38 +6,47 @@ const session = require('express-session')
 const passport = require('passport')
 const methodOverride = require('method-override')
 if (process.env.NODE_ENV !== 'production') { // 如果不是 production 模式
-    require('dotenv').config() // 使用 dotenv 讀取 .env 檔案
+  require('dotenv').config() // 使用 dotenv 讀取 .env 檔案
 }
+const db = require('./models')
+const Todo = db.Todo
+const User = db.User
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 
+
+
 app.get('/', (req, res) => {
-    return res.send('homepage')
+  return res.send('homepage')
 })
 
 app.get('/users/login', (req, res) => {
-    res.render('login')
+  res.render('login')
 })
 
 app.post('/users/login', (req, res) => {
-    res.send('login')
+  res.send('login')
 })
 
 app.get('/users/register', (req, res) => {
-    res.render('register')
+  res.render('register')
 })
 
 app.post('/users/register', (req, res) => {
-    res.send('register')
+  User.create({
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password
+  }).then(user => res.redirect('/'))
 })
 
 app.get('/users/logout', (req, res) => {
-    res.send('logout')
+  res.send('logout')
 })
 
 app.listen(3000, () => {
-    console.log('app is running')
+  console.log('app is running')
 })
