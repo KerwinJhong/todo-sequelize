@@ -23,29 +23,7 @@ app.get('/', (req, res) => {
   return res.send('homepage')
 })
 
-app.get('/users/login', (req, res) => {
-  res.render('login')
-})
-
-app.post('/users/login', (req, res) => {
-  res.send('login')
-})
-
-app.get('/users/register', (req, res) => {
-  res.render('register')
-})
-
-app.post('/users/register', (req, res) => {
-  User.create({
-    name: req.body.name,
-    email: req.body.email,
-    password: req.body.password
-  }).then(user => res.redirect('/'))
-})
-
-app.get('/users/logout', (req, res) => {
-  res.send('logout')
-})
+app.use('/users', require('./routes/user'))
 
 app.listen(3000, () => {
   console.log('app is running')
