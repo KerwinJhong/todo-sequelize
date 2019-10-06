@@ -1,0 +1,35 @@
+<div class="">
+  <div class="input-group-prepend">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false">類別</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+    </div>
+  </div>
+</div>
+<div class="total">
+  <span>總金額：</span>
+</div>
+<a href="/todos/new" class="btn btn-primary mb-3">Create</a>
+<ul class="list-group">
+  {{#each todos}}
+  <li class="list-group-item">
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <input style="vertical-align: middle;" type="checkbox" name="done" {{#if this.done }} checked{{/if}} />
+        <h4 style="display: inline;vertical-align: middle;">{{{this.name}}}</h4>
+      </div>
+      <div class="col-auto">
+        <a href="/todos/{{{this.id}}}/edit" class="btn btn-success">edit</a>
+        <form action="/todos/{{{this.id}}}/delete?_method=DELETE" method="post" style="display:inline">
+          <button type="submit" class="btn btn-danger">delete</button>
+        </form>
+      </div>
+    </div>
+  </li>
+  {{/each}}
+</ul>
+<div class="">
+  <a href="/todos/new" class="btn btn-primary mb-3">Create</a>
+</div>
