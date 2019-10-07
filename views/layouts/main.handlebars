@@ -12,6 +12,18 @@
 </head>
 
 <body>
+  <header>
+    <nav class="navbar navbar-dark bg-primary justify-content-between">
+      <a class="navbar-brand" href="/">To-do List</a>
+      {{#if isAuthenticated}}
+      <a href="/users/logout" class="btn btn-outline-light">登出</a>
+      {{else}}
+      <a href="/users/login" class="btn btn-outline-light">登入</a>
+      {{/if}}
+    </nav>
+  </header>
+
+
   <main>
     <div class="container my-3" style="min-height: 100vh;">
       {{{body}}}
