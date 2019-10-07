@@ -1,19 +1,17 @@
-<div class="">
-  <div class="input-group-prepend">
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
-    </div>
+<div class="input-group-prepend">
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
   </div>
 </div>
 
-<a href="/todos/new" class="btn btn-primary mb-3">Create</a>
-<ul class="list-group">
+<ul class="list-group mx-auto todos">
   {{#each todos}}
   <li class="list-group-item">
     <div class="row">
-      <div class="col-auto mr-auto">
-        <input style="vertical-align: middle;" type="checkbox" name="done" {{#if this.done }} checked{{/if}} disabled />
+      <div class="col-auto my-auto mr-auto">
+        <input class="mr-2" style="vertical-align: middle;" type="checkbox" name="done" {{#if this.done }}
+          checked{{/if}} disabled />
         <h4 style="display: inline;vertical-align: middle;">{{{this.name}}}</h4>
       </div>
       <div class="col-auto">

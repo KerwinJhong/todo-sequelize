@@ -1,5 +1,5 @@
-<form action="/todos/{{{todo.id}}}/edit?_method=PUT" method="POST">
-  <div class="input-group mb-3">
+<form class="mx-auto textBox" action="/todos/{{{todo.id}}}/edit?_method=PUT" method="POST">
+  <div class="input-group">
     <div class="input-group-prepend">
       <div class="input-group-text">
         <input type="checkbox" name="done" {{#if todo.done }} checked{{/if}} />

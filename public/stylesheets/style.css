@@ -1,37 +1,42 @@
-.banner {
-    z-index: -1;
-    position: relative;
-    margin: -5px;
-    height: 100vh;
-    background: #dddddd center center url('https://image.freepik.com/free-photo/group-friends-eating-restaurant_23-2148006691.jpg');
+header nav {
+    background: linear-gradient(80deg, rgba(80, 230, 220, 1)30%, rgba(55, 190, 210, 0.8)70%);
+    background: -moz-linear-gradient(80deg, rgba(80, 230, 220, 1)30%, rgba(55, 190, 210, 0.8)70%);
+    background: -webkit-linear-gradient(80deg, rgba(80, 230, 220, 1)30%, rgba(55, 190, 210, 0.8)70%);
+    background: -o-linear-gradient(80deg, rgba(80, 230, 220, 1)30%, rgba(55, 190, 210, 0.8)70%);
+}
+
+.flag {
+    color: black;
+    background-color: yellow;
+    border-radius: 50% 10% 50% 10%/50% 0% 50% 0%;
+    -webkit-border-radius: 50% 10% 50% 10%/50% 0% 50% 0%;
+    -moz-border-radius: 50% 10% 50% 10%/50% 0% 50% 0%;
+}
+
+main {
+    background: #dddddd center center url('https://pbs.twimg.com/media/DiChqYAVMAADTxp.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: blur(3px);
 }
 
-#search-bar {
-    margin: 0 auto;
-    max-width: 680px;
-    background-color: #fce2cf;
-    border-radius: 8px;
-    padding: 20px 30px;
-    border: 0;
-    margin-top: -320px;
-    margin-bottom: 240px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+.todos {
+    max-width: 800px;
+    max-height: 80vh;
+    margin: 10vh 0;
+    overflow: scroll;
 }
 
-.boss,
-.you {
-    width: 340px;
+.textBox {
+    max-width: 800px;
+    padding: 10vh 0;
 }
 
 footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #fce2cf;
+    background-color: #2D63A9;
     color: #000000;
     text-align: center;
 }
@@ -41,7 +46,7 @@ footer ul {
 }
 
 footer li {
-    color: #6d7b77;
+    color: #000000;
     list-style-type: none;
 }
 
@@ -58,7 +63,7 @@ footer .socialicon a {
 }
 
 footer .fa-facebook-square {
-    color: #3b5998;
+    color: #0647d4;
     font-size: 40px;
 }
 

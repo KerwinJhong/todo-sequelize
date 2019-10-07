@@ -9,23 +9,28 @@
   <link rel="shortcut icon" type="image/x-icon" href="/image/favicon.ico">
   <link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
   <header>
-    <nav class="navbar navbar-dark bg-primary justify-content-between">
-      <a class="navbar-brand" href="/">To-do List</a>
+    <nav class="navbar justify-content-between">
+      <a class="navbar-brand flag" href="/">To-do List</a>
       {{#if isAuthenticated}}
-      <a href="/users/logout" class="btn btn-outline-light">登出</a>
+      <span>Welcome back, {{user.name}}</span>
+      <div class="">
+        <a href="/todos/new" class="btn btn-info">Create</a>
+        <a href="/users/logout" class="btn btn-info">Logout</a>
+      </div>
       {{else}}
-      <a href="/users/login" class="btn btn-outline-light">登入</a>
+      <a href="/users/login" class="btn btn-info">Login</a>
       {{/if}}
     </nav>
   </header>
 
 
   <main>
-    <div class="container my-3" style="min-height: 100vh;">
+    <div class="container" style="min-height: 100vh;">
       {{{body}}}
     </div>
   </main>
