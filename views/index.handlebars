@@ -21,15 +21,12 @@
         <h4 style="display: inline;vertical-align: middle;">{{{this.name}}}</h4>
       </div>
       <div class="col-auto">
+        <a href="/todos/{{{this.id}}}" class="btn btn-success">detail</a>
         <a href="/todos/{{{this.id}}}/edit" class="btn btn-success">edit</a>
-        <form action="/todos/{{{this.id}}}/delete?_method=DELETE" method="post" style="display:inline">
+        <form action="/todos/{{{this.id}}}/delete" style="display:inline">
           <button type="submit" class="btn btn-danger">delete</button>
         </form>
       </div>
     </div>
   </li>
   {{/each}}
-</ul>
-<div class="">
-  <a href="/todos/new" class="btn btn-primary mb-3">Create</a>
-</div>

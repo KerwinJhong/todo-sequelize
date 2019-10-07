@@ -33,10 +33,6 @@ app.use((req, res, next) => {
   next()
 })
 
-app.get('/', (req, res) => {
-  return res.send('homepage')
-})
-
 app.use('/', require('./routes/home'))
 app.use('/users', require('./routes/user'))
 app.use('/todos', require('./routes/todo'))
